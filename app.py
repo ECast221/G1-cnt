@@ -33,6 +33,11 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/stream')
+def stream():
+    """Video streaming home page."""
+    return render_template('stream.html')
+
 
 def gen():
     """Video streaming generator function."""
