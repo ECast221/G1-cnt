@@ -5,10 +5,10 @@ from utils import base64_to_pil_image, pil_image_to_base64
 
 
 class Camera(object):
-    def __init__(self, makeup_artist):
+    def __init__(self, imageInv):
         self.to_process = []
         self.to_output = []
-        self.makeup_artist = makeup_artist
+        self.makeup_artist = imageInv
 
         thread = threading.Thread(target=self.keep_processing, args=())
         thread.daemon = True
