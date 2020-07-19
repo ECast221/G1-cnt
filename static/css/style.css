@@ -1,8 +1,8 @@
-.container {
+#container {
      margin: 0px auto;
  }
 
-.videoBox {
+#videoBox {
      width: 640px;
      height: 480px;
      background-color: #666;
