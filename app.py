@@ -28,8 +28,12 @@ google = oauth.register(
     client_kwargs={'scope': 'openid email profile'},
 )
 
-
 @app.route('/')
+def loginPage():
+    return render_template('login.html')
+
+
+@app.route('/login')
 def login():
     google = oauth.create_client('google')
     redirect_uri = url_for('authorize', _external=True)
@@ -58,13 +62,9 @@ def test_connect():
     app.logger.info("client connected")
 
 
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-
 @app.route('/streamingpage')
 def stream():
+
     return render_template('stream.html')
 
 

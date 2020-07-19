@@ -1,7 +1,7 @@
 $(document).ready(function(){
   let namespace = "/test";
-  let video = document.querySelector("#videoElement");
-  let canvas = document.querySelector("#canvasElement");
+  let video = document.querySelector("#video");
+  let canvas = document.querySelector("#canvas");
   let ctx = canvas.getContext('2d');
 
   var localMediaStream = null;
