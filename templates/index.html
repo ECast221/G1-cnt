@@ -2,19 +2,12 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
         <title>Video Page!</title>
-        <style>
-         #imageElement {
-             width: 640px;
-             height: 480px;
-             background-color: #222;
-         }
-
-        </style>
     </head>
     <body>
         <div id="container">
-            <img id="imageElement" src="{{ url_for('video_feed') }}">
+            <img id="videoBox" src="{{ url_for('video_feed') }}">
             <video class="m-1" width="500" controls>
               <source src={{url_for('static', filename="placeholder_1.mp4") }} type="video/mp4">
                 </video>
