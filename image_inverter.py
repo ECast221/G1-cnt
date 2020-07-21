@@ -1,7 +1,7 @@
 from PIL import Image
 
 
-class ImageInverter(object):
+class ImageDisplayer(object):
     def __init__(self):
         pass
 

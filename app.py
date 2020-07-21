@@ -1,5 +1,5 @@
 from sys import stdout
-from image_inverter import ImageInverter
+from image_inverter import ImageDisplayer
 import logging
 from flask import Flask, render_template, Response, jsonify, redirect, session, url_for
 from flask_socketio import SocketIO
@@ -11,7 +11,7 @@ app.logger.addHandler(logging.StreamHandler(stdout))
 app.config['SECRET_KEY'] = 'secret!'
 app.config['DEBUG'] = True
 socketio = SocketIO(app)
-camera = Camera(ImageInverter())
+camera = Camera(ImageDisplayer())
 oauth = OAuth(app)
 
 
