@@ -8,7 +8,7 @@ $(document).ready(function(){
 
   var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
 
-  function sendSnapshot() {
+  function sendImage() {
     if (!localMediaStream) {
       return;
     }
@@ -35,7 +35,7 @@ $(document).ready(function(){
     localMediaStream = stream;
 
         setInterval(function () {
-          sendSnapshot();
+          sendImage();
         }, 50);
       }).catch(function(error) {
         console.log(error);

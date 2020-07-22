@@ -1,5 +1,5 @@
 from sys import stdout
-from image_inverter import ImageDisplayer
+from imagerender import ImageDisplayer
 import logging
 from flask import Flask, render_template, Response, jsonify, redirect, session, url_for
 from flask_socketio import SocketIO
@@ -8,8 +8,6 @@ from authlib.integrations.flask_client import OAuth
 
 app = Flask(__name__)
 app.logger.addHandler(logging.StreamHandler(stdout))
-app.config['SECRET_KEY'] = 'secret!'
-app.config['DEBUG'] = True
 socketio = SocketIO(app)
 camera = Camera(ImageDisplayer())
 oauth = OAuth(app)
@@ -64,7 +62,6 @@ def test_connect():
 
 @app.route('/streamingpage')
 def stream():
-
     return render_template('stream.html')
 
 
